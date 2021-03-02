@@ -1,32 +1,39 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {
-  ShopDetailTitle,
-  ShopDetailImage,
-  ShopDetailWrapper,
-} from "../../styles";
-import { Spinner } from "native-base";
+import { ShopDetailTitle, ShopDetailImage } from "../../styles";
+import { Card, CardItem, Left, Body } from "native-base";
 import ProductList from "../product/ProductList";
+import { View } from "react-native";
 
 const ShopDetail = () => {
-  const loading = useSelector((state) => state.shopReducer.loading);
+  const productReducer = useSelector((state) => state.productReducer);
+
   const shop = useSelector((state) => state.shopReducer.shops[0]);
+  const shopLoading = useSelector((state) => state.shopReducer.loading);
 
-  const products = useSelector((state) => state.productReducer.products);
+  if (shopLoading || productReducer.loading) return <Loading />;
 
-  const productsFromProductStore = shop.products.map((product) =>
-    products.find((_product) => product.id === _product.id)
+  const productsFromShop = shop.products.map((product) =>
+    productReducer.products.find((_product) => _product.id === product.id)
   );
 
-  if (loading) return <Spinner />;
   return (
     <>
-      <ShopDetailWrapper>
-        {/* <ShopDetailImage source={{ uri: shop.image }} /> */}
-        <ShopDetailTitle>{shop.name}</ShopDetailTitle>
-      </ShopDetailWrapper>
-
-      <ProductList products={productsFromProductStore} />
+      <View>
+        <Card>
+          <CardItem>
+            <Left>
+              <Body>
+                <ShopDetailTitle>{shop.name}</ShopDetailTitle>
+              </Body>
+            </Left>
+          </CardItem>
+          <CardItem cardBody>
+            <ShopDetailImage source={{ uri: shop.image }} />
+          </CardItem>
+        </Card>
+        <ProductList products={productsFromShop} />
+      </View>
     </>
   );
 };

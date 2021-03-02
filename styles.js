@@ -50,13 +50,10 @@ export const ShopItemStyled = styled.Text`
   width: 100%;
 `;
 
-export const ShopDetailWrapper = styled.View`
-  margin-top: 50px;
-`;
-
 export const ShopDetailImage = styled.Image`
-  width: 150px;
-  height: 150px;
+  flex: 1;
+  width: 200px;
+  height: 200px;
 `;
 
 export const ShopDetailTitle = styled.Text`

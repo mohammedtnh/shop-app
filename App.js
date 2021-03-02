@@ -14,9 +14,9 @@ export default function App() {
     <Provider store={store}>
       <StyledAppView>
         <ThemeProvider theme={theme.dark}>
-          {/* <ShopDetail /> */}
+          <ShopDetail />
           {/* <ShopList /> */}
-          <Home />
+          {/* <Home /> */}
         </ThemeProvider>
         <StatusBar style="auto" />
       </StyledAppView>
