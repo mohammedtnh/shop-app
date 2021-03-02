@@ -6,9 +6,11 @@ import {
   ButtonStyled,
   OverLayContainer,
   BottomStyling,
+  ButtonTextStyled,
+  ButtonIconStyled,
 } from "../styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <HomeBackground
       source={{
@@ -21,8 +23,17 @@ const Home = () => {
           <Title>Smart Hub</Title>
         </TopStyling>
         <BottomStyling>
-          <ButtonStyled onPress={() => alert("Take me to the list of shops")}>
-            Click here to skip
+          <ButtonStyled
+            bordered
+            success
+            rounded
+            large
+            block
+            iconLeft
+            onPress={() => navigation.navigate("ShopList")}
+          >
+            <ButtonIconStyled type="AntDesign" name="profile" />
+            <ButtonTextStyled> Enter Shops List </ButtonTextStyled>
           </ButtonStyled>
         </BottomStyling>
       </OverLayContainer>

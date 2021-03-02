@@ -1,10 +1,16 @@
 import React from "react";
-import { ListItem } from "native-base";
+import { ListItem, Left, Thumbnail } from "native-base";
 import { ShopItemStyled } from "../../styles";
 
-const ShopItem = ({ shop }) => {
+const ShopItem = ({ shop, navigation }) => {
   return (
-    <ListItem>
+    <ListItem
+      avatar
+      onPress={() => navigation.navigate("ShopDetail", { shop: shop })}
+    >
+      <Left>
+        <Thumbnail source={{ uri: shop.image }} />
+      </Left>
       <ShopItemStyled>{shop.name}</ShopItemStyled>
     </ListItem>
   );

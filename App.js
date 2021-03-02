@@ -1,25 +1,19 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Provider } from "react-redux";
 import store from "./store";
-import { StyledAppView } from "./styles";
 import { ThemeProvider } from "styled-components";
-import theme from "./theme";
-import ShopList from "./components/shop/ShopList";
-import Home from "./components/Home";
-import ShopDetail from "./components/shop/ShopDetail";
+import { appTheme, NavTheme } from "./theme";
+import { NavigationContainer } from "@react-navigation/native";
+import RootNavigator from "./components/Navigation";
 
 export default function App() {
   return (
     <Provider store={store}>
-      <StyledAppView>
-        <ThemeProvider theme={theme.dark}>
-          <ShopDetail />
-          {/* <ShopList /> */}
-          {/* <Home /> */}
-        </ThemeProvider>
-        <StatusBar style="auto" />
-      </StyledAppView>
+      <ThemeProvider theme={appTheme.dark}>
+        <NavigationContainer theme={NavTheme}>
+          <RootNavigator />
+        </NavigationContainer>
+      </ThemeProvider>
     </Provider>
   );
 }

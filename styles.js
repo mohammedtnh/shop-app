@@ -1,11 +1,5 @@
 import styled from "styled-components/native";
-
-export const StyledAppView = styled.View`
-  background-color: papayawhip;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`;
+import { Button, Text, Icon } from "native-base";
 
 export const TopStyling = styled.View`
   height: 40%;
@@ -14,7 +8,7 @@ export const TopStyling = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: black;
+  color: rgb(229, 255, 66);
   font-size: 38px;
   text-align: center;
 `;
@@ -36,7 +30,18 @@ export const BottomStyling = styled.View`
   justify-content: center;
 `;
 
-export const ButtonStyled = styled.Text`
+export const ButtonStyled = styled(Button)`
+  background-color: rgba(12, 221, 166, 0.5);
+  margin-left: 50px;
+  margin-right: 50px;
+`;
+
+export const ButtonTextStyled = styled(Text)`
+  font-size: 20px;
+  color: #fff;
+`;
+
+export const ButtonIconStyled = styled(Icon)`
   font-size: 20px;
   color: #fff;
 `;
@@ -58,5 +63,6 @@ export const ShopDetailImage = styled.Image`
 
 export const ShopDetailTitle = styled.Text`
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
+  text-align: center;
 `;

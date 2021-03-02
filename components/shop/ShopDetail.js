@@ -5,22 +5,25 @@ import { Card, CardItem, Left, Body } from "native-base";
 import ProductList from "../product/ProductList";
 import { View } from "react-native";
 
-const ShopDetail = () => {
+const ShopDetail = ({ navigation, route }) => {
+  const { shop } = route.params;
   const productReducer = useSelector((state) => state.productReducer);
 
-  const shop = useSelector((state) => state.shopReducer.shops[0]);
-  const shopLoading = useSelector((state) => state.shopReducer.loading);
-
-  if (shopLoading || productReducer.loading) return <Loading />;
+  if (productReducer.loading) return <Loading />;
 
   const productsFromShop = shop.products.map((product) =>
     productReducer.products.find((_product) => _product.id === product.id)
   );
 
+  console.log(productsFromShop);
+
   return (
     <>
       <View>
         <Card>
+          <CardItem cardBody>
+            <ShopDetailImage source={{ uri: shop.image }} />
+          </CardItem>
           <CardItem>
             <Left>
               <Body>
@@ -28,11 +31,8 @@ const ShopDetail = () => {
               </Body>
             </Left>
           </CardItem>
-          <CardItem cardBody>
-            <ShopDetailImage source={{ uri: shop.image }} />
-          </CardItem>
         </Card>
-        <ProductList products={productsFromShop} />
+        <ProductList products={productsFromShop} navigation={navigation} />
       </View>
     </>
   );
