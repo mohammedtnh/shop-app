@@ -66,3 +66,15 @@ export const ShopDetailTitle = styled.Text`
   font-size: 30px;
   text-align: center;
 `;
+
+export const TotalPrice = styled.Text`
+  color: ${(props) => props.theme.red};
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+`;
+
+export const CartButtonStyled = styled(Icon)`
+  color: ${(props) => props.theme.backgroundColor};
+  margin-right: 10px;
+`;
