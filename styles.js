@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Button, Text, Icon } from "native-base";
+import { Button, Icon } from "native-base";
 
 export const TopStyling = styled.View`
   height: 40%;
@@ -36,7 +36,7 @@ export const ButtonStyled = styled(Button)`
   margin-right: 50px;
 `;
 
-export const ButtonTextStyled = styled(Text)`
+export const ButtonTextStyled = styled.Text`
   font-size: 20px;
   color: #fff;
 `;

@@ -1,5 +1,6 @@
 import React from "react";
-import { ListItem, Left, Thumbnail, Right, Button, Text } from "native-base";
+import { ListItem, Left, Thumbnail, Right, Button } from "native-base";
+import { Text } from "react-native";
 import { ShopItemStyled } from "../../styles";
 import NumericInput from "react-native-numeric-input";
 import { useState } from "react";

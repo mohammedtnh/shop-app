@@ -1,5 +1,6 @@
-import { Body, Icon, ListItem, Right, Text } from "native-base";
 import React from "react";
+import { Body, Icon, ListItem, Right } from "native-base";
+import { Text } from "react-native";
 import { useDispatch } from "react-redux";
 import { removeItemFromCart } from "../../store/actions/cartActions";
 import { TotalPrice } from "../../styles";

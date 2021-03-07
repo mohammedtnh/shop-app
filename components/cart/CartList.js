@@ -1,5 +1,6 @@
-import { List, View, Text } from "native-base";
 import React from "react";
+import { List, View } from "native-base";
+import { Text } from "react-native";
 import { useSelector } from "react-redux";
 import CheckoutButton from "../buttons/CheckoutButton";
 import Loading from "../Loading";

@@ -16,8 +16,6 @@ const ShopDetail = ({ navigation, route }) => {
     productReducer.products.find((_product) => _product.id === product.id)
   );
 
-  console.log(productsFromShop);
-
   return (
     <>
       <View>
