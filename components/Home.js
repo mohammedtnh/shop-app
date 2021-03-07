@@ -9,8 +9,12 @@ import {
   ButtonTextStyled,
   ButtonIconStyled,
 } from "../styles";
+import { useDispatch, useSelector } from "react-redux";
+import { signout } from "../store/actions/authActions";
 
 const Home = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.authReducer.user);
   return (
     <HomeBackground
       source={{
@@ -35,6 +39,21 @@ const Home = ({ navigation }) => {
             <ButtonIconStyled type="AntDesign" name="profile" />
             <ButtonTextStyled> Enter Shops List </ButtonTextStyled>
           </ButtonStyled>
+
+          {user && (
+            <ButtonStyled
+              bordered
+              success
+              rounded
+              large
+              block
+              iconLeft
+              onPress={() => dispatch(signout())}
+            >
+              <ButtonIconStyled type="AntDesign" name="profile" />
+              <ButtonTextStyled> Signout </ButtonTextStyled>
+            </ButtonStyled>
+          )}
         </BottomStyling>
       </OverLayContainer>
     </HomeBackground>

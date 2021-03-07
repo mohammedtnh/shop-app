@@ -78,3 +78,8 @@ export const CartButtonStyled = styled(Icon)`
   color: ${(props) => props.theme.backgroundColor};
   margin-right: 10px;
 `;
+
+export const CartTextStyled = styled.Text`
+  color: ${(props) => props.theme.backgroundColor};
+  font-size: 20px;
+`;

@@ -4,6 +4,7 @@ import { ShopDetailTitle, ShopDetailImage } from "../../styles";
 import { Card, CardItem, Left, Body } from "native-base";
 import ProductList from "../product/ProductList";
 import { View } from "react-native";
+import Loading from "../Loading";
 
 const ShopDetail = ({ navigation, route }) => {
   const { shop } = route.params;

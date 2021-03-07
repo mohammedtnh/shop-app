@@ -1,6 +1,7 @@
-import { List, View } from "native-base";
+import { List, View, Text } from "native-base";
 import React from "react";
 import { useSelector } from "react-redux";
+import CheckoutButton from "../buttons/CheckoutButton";
 import Loading from "../Loading";
 import CartItem from "./CartItem";
 
@@ -22,6 +23,7 @@ const CartList = () => {
   return (
     <View>
       <List>{list}</List>
+      {items.length === 0 ? <Text>No items</Text> : <CheckoutButton />}
     </View>
   );
 };
